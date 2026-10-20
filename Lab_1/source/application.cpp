@@ -75,17 +75,17 @@ void drawCubeUI(const char *title, const char *id_suffix, CubeState &cube) {
   ImGui::PushID(id_suffix);
   ImGui::Text("%s", title);
 
-  ImGui::Text("Трансформации (Доп. 2)");
+  ImGui::Text("Трансформации");
   ImGui::DragFloat3("Позиция", glm::value_ptr(cube.pos), 0.05f);
   ImGui::DragFloat3("Поворот", glm::value_ptr(cube.rot), 0.05f);
   ImGui::DragFloat3("Масштаб", glm::value_ptr(cube.scale), 0.05f);
 
-  ImGui::Text("Анимация (Доп. 3)");
+  ImGui::Text("Анимация");
   ImGui::Checkbox("Воспроизведение (по кругу)", &cube.animate);
   ImGui::SliderFloat("Скорость", &cube.anim_speed, 0.1f, 5.0f);
   ImGui::SliderFloat("Радиус траектории", &cube.anim_radius, 0.0f, 10.0f);
 
-  ImGui::Text("Цвет фигуры (Доп. 4 и 5)");
+  ImGui::Text("Цвет фигуры");
   ImGui::ColorEdit3("Базовый цвет", cube.color);
 
   ImGui::PopID();
